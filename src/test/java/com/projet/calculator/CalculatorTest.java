@@ -4,11 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CalculatorTest {@Test
-public void testAddition() {
-    Calculator calculator = new Calculator();
-    int result = calculator.add(2, 3);
-    assertEquals(5, result, "2 + 3 doit être égal à 5");
-}
+public class CalculatorTest {
+    @Test
+    public void testAdd() {
+        Calculator calc = new Calculator();
+        assertEquals(5, calc.add(2, 3));
+        assertEquals(-1, calc.add(-2, 1));
+    }
 
+    @Test
+    public void testDivide() {
+        Calculator calc = new Calculator();
+        assertEquals(2, calc.divide(6, 3));
+        assertEquals(-2, calc.divide(-6, 3));
+    }
 }
